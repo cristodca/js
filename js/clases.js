@@ -1,11 +1,10 @@
-// CLASES 1 - 2
+// CLASES 1 - 3
 
 // Clase 1 - Variables
 
 // console.log("Hello world!")
 
 var myName = "Cristopher", myLastName = "D. Chavez"
-var myAge = 20, myWeight = 60
 
 // console.log(`Hi, ${myName} ${myLastName}`)
 // console.log(`I'm ${myAge} years old`)
@@ -29,3 +28,27 @@ var myCompleteName = `${myName} ${myLastName}`
 // Toma una cantidad de caracteres (3), desde una posición determinada (1)
 var str = myName.substr(1, 3)
 
+
+// ===============
+// Clase 3 - Variables number
+
+var myAge = 20, myWeight = 60
+var food = 1, sport = 3
+
+myAge++ // 21
+myWeight -= 2   // 58
+
+myWeight += food    // 59
+myWeight -= sport   // 56
+
+var winePrice = 200.3
+var totalPrice = Math.round(winePrice * 100 * 3) / 100
+
+// Convierte a String con dos Decimales
+var totalPriceStr = totalPrice.toFixed(2)
+
+// Convierte a Float desde String
+var totalPrice2 = parseFloat(totalPriceStr)
+
+var pizza = 8, persons = 2
+var pizzaSlicesPerPerson = pizza / persons
