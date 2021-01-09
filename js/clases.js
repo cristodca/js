@@ -1,4 +1,4 @@
-// CLASES 1 - 4
+// CLASES 1 - 5
 
 // Clase 1 - Variables
 
@@ -59,4 +59,15 @@ var pizzaSlicesPerPerson = pizza / persons
  
 function printAge(userName, userAge) {
     console.log(`${userName} is ${userAge} years old`)
+}
+
+
+// ===============
+// Clase 5 - Scope
+
+myName = "Cristopher"
+
+function printMayusName(n) {
+    n = n.toUpperCase()
+    console.log(n)
 }
