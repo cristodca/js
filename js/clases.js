@@ -91,3 +91,12 @@ var marce = {
 function printMayusName2({ nombre }) {
     console.log(nombre.toUpperCase())
 }
+
+
+// ===============
+// Clase 7 - Desestructuración de Objetos
+
+// function printMayusName2(person) {
+//     var { nombre } = person
+//     console.log(nombre.toUpperCase())
+// }
