@@ -146,3 +146,47 @@ otroDaniel = {
 otroDaniel = daniel
 
 
+// ===============
+// Clase 10 - Condicionales
+
+var cristo = {
+    nombre: "Cristopher",
+    apellido: "D. Chavez",
+    edad: 20,
+    ingeniero: true,
+    rapero: false,
+    dj: false,
+    filmmaker: true
+}
+
+function printProfessions(person) {
+    console.log(`${person.nombre} es:`)
+    if (person.ingeniero) {
+        console.log("Ingeniero")
+    } else {
+        console.log("No es ingeniero")
+    }
+    if (person.rapero) {
+        console.log("Rapero")
+    } else {
+        console.log("No es rapero")
+    }
+    if (person.dj) {
+        console.log("DJ")
+    } else {
+        console.log("No es DJ")
+    }
+    if (person.filmmaker) {
+        console.log("Filmmaker")
+    } else {
+        console.log("No es filmmaker")
+    }
+}
+
+function ifLegalAge(person) {
+    if(person.edad >= 18) {
+        console.log(`${person.nombre} es mayor de edad`)
+    } else {
+        console.log(`${person.nombre} es menor de edad`)
+    }
+}
