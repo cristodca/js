@@ -100,3 +100,22 @@ function printMayusName2({ nombre }) {
 //     var { nombre } = person
 //     console.log(nombre.toUpperCase())
 // }
+
+
+// ===============
+// Clase 8 - Parámetros como referencia o como valor
+
+// No modifica el valor del objeto global
+function birthday(edad) {
+    edad += 1
+}
+
+// Modifica el valor del objeto global
+function birthdayObj(persona) {
+    return {
+        ...persona,     // Copia el objeto que entra
+        edad: persona.edad + 1  // Aumenta la edad en 1
+        // Se podrían agregar nuevos campos
+    }
+    persona.edad += 1
+}
