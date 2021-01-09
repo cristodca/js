@@ -119,3 +119,30 @@ function birthdayObj(persona) {
     }
     persona.edad += 1
 }
+
+
+// ===============
+// Clase 9 - Comparaciones en Javascript
+
+var x = 4, y = "4"
+// x == y       -> true (mismo valor)
+// x === y     -> false (mismo valor, distinto tipo)
+
+// Estas características sólo aplican a objetos primitivos, no objetos ni otros complejos.
+var daniel = {
+    nombre: "Daniel"
+}
+
+var otroDaniel = {
+    nombre: "Daniel"
+}
+
+// Estos siguen siendo dos objetos distintos
+otroDaniel = {
+    ...daniel
+}
+
+// Aunque se pueden generar excepciones
+otroDaniel = daniel
+
+
