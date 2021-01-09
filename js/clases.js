@@ -71,3 +71,23 @@ function printMayusName(n) {
     n = n.toUpperCase()
     console.log(n)
 }
+
+
+// ===============
+// Clase 6 - Objetos
+
+var cristo = {
+    nombre: "Cristopher",
+    apellido: "D. Chavez",
+    edad: 20
+}
+
+var marce = {
+    nombre: "Marcela",
+    apellido: "Jacobo",
+    edad: 20
+}
+
+function printMayusName2({ nombre }) {
+    console.log(nombre.toUpperCase())
+}
