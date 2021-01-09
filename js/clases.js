@@ -1,4 +1,4 @@
-// CLASES 1 - 3
+// CLASES 1 - 4
 
 // Clase 1 - Variables
 
@@ -52,3 +52,11 @@ var totalPrice2 = parseFloat(totalPriceStr)
 
 var pizza = 8, persons = 2
 var pizzaSlicesPerPerson = pizza / persons
+
+
+// ===============
+// Clase 4 - Funciones
+ 
+function printAge(userName, userAge) {
+    console.log(`${userName} is ${userAge} years old`)
+}
