@@ -222,3 +222,36 @@ function permitirAcceso(p) {
         console.log("ACCESO DENEGADO")
     }
 }
+
+
+// ===============
+// Clase 13 - Estructura repetitiva For
+
+var cristo = {
+    nombre: "Cristopher",
+    apellido: "D. Chavez",
+    edad: 20,
+    peso: 62
+}
+
+console.log(`Al inicio del año ${cristo.nombre} pesa ${cristo.peso} kg.`)
+
+const VARIACION_PESO = .2
+const DIAS_ANNIO = 365
+
+const aumetaPeso = p => p.peso += VARIACION_PESO
+const pierdePeso = p => p.peso -= VARIACION_PESO
+
+for (var i = 0; i < DIAS_ANNIO ; i++) {
+    var r = Math.random()
+
+    if (r < 0.25) {
+        aumetaPeso(cristo)
+    } else if (r < 0.5){
+        pierdePeso(cristo)
+    } else {
+
+    }
+}
+
+console.log(`Al final del año ${cristo.nombre} pesa ${cristo.peso.toFixed(2)} kg.`)
