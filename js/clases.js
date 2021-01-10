@@ -359,3 +359,15 @@ const esBaja = ({ altura }) => altura <= 1.7
 
 var personasAltas = personas.filter(esAlta)
 var personasBajas = personas.filter(esBaja)
+
+
+// ===============
+// Clase 19 - Transformar Arrays
+
+const pasarAlturaCms = p => ({
+        ...p,
+        altura: p.altura * 100
+})
+
+var personasCms = personas.map(pasarAlturaCms)
+
