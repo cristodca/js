@@ -266,15 +266,29 @@ const haceDeporte = () => Math.random() < 0.4
 
 var dias = 0;
 
-while (cristo.peso > META) {
-    // debugger
-    if (comeMucho()) {
-        aumetaPeso(cristo)
-    }
-    if (haceDeporte()) {
-        pierdePeso(cristo)
-    }
-    dias++
-}
+// while (cristo.peso > META) {
+//     // debugger
+//     if (comeMucho()) {
+//         aumetaPeso(cristo)
+//     }
+//     if (haceDeporte()) {
+//         pierdePeso(cristo)
+//     }
+//     dias++
+// }
 
-console.log(`Pasaron ${dias} días hasta que ${cristo.nombre} adelgazó lo suficiente`)
+// console.log(`Pasaron ${dias} días hasta que ${cristo.nombre} adelgazó lo suficiente`)
+
+
+// ===============
+// Clase 15 - Ciclo Do While
+
+var contador = 0
+
+const llueve = () => Math.random() < 0.25
+
+do {
+    contador++
+} while (!llueve());
+
+contador > 1 ? console.log(`Fui a ver si llovía ${contador} veces`) : console.log(`Fui a ver si llovía ${contador} vez`)
