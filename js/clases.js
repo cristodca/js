@@ -313,3 +313,39 @@ switch (signo.toLowerCase()) {
         // No indicaste signo zodiacal
         break
 }
+
+
+// ===============
+// Clase 17 - Arrays
+
+var personas = [
+    {
+        nombre: "Cristo",
+        apellido: "D. Chavez",
+        altura: 1.75
+    },
+    {
+        nombre: "Marcela",
+        apellido: "Jacobo",
+        altura: 1.6
+    },
+    {
+        nombre: "Daner",
+        apellido: "SCK",
+        altura: 1.7
+    },
+    {
+        nombre: "Elon",
+        apellido: "Musk",
+        altura: 1.72
+    },
+    {
+        nombre: "Michael",
+        apellido: "Jordan",
+        altura: 2.1
+    }
+]
+
+for (var i = 0; i < personas.length; i++) {
+    console.log(`${personas[i].nombre} mide ${personas[i].altura} m.`)
+}
