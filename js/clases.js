@@ -234,9 +234,9 @@ var cristo = {
     peso: 62
 }
 
-console.log(`Al inicio del año ${cristo.nombre} pesa ${cristo.peso} kg.`)
+// console.log(`Al inicio del año ${cristo.nombre} pesa ${cristo.peso} kg.`)
 
-const VARIACION_PESO = .2
+const VARIACION_PESO = .3
 const DIAS_ANNIO = 365
 
 const aumetaPeso = p => p.peso += VARIACION_PESO
@@ -246,12 +246,35 @@ for (var i = 0; i < DIAS_ANNIO ; i++) {
     var r = Math.random()
 
     if (r < 0.25) {
-        aumetaPeso(cristo)
+        // aumetaPeso(cristo)
     } else if (r < 0.5){
-        pierdePeso(cristo)
+        // pierdePeso(cristo)
     } else {
 
     }
 }
 
-console.log(`Al final del año ${cristo.nombre} pesa ${cristo.peso.toFixed(2)} kg.`)
+// console.log(`Al final del año ${cristo.nombre} pesa ${cristo.peso.toFixed(2)} kg.`)
+
+
+// ===============
+// Clase 14 - Estructura repetitiva While
+
+const META = cristo.peso - 3
+const comeMucho = () => Math.random() < 0.3
+const haceDeporte = () => Math.random() < 0.4
+
+var dias = 0;
+
+while (cristo.peso > META) {
+    // debugger
+    if (comeMucho()) {
+        aumetaPeso(cristo)
+    }
+    if (haceDeporte()) {
+        pierdePeso(cristo)
+    }
+    dias++
+}
+
+console.log(`Pasaron ${dias} días hasta que ${cristo.nombre} adelgazó lo suficiente`)
