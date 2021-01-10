@@ -337,7 +337,7 @@ var personas = [
     {
         nombre: "Elon",
         apellido: "Musk",
-        altura: 1.72
+        altura: 1.85
     },
     {
         nombre: "Michael",
@@ -349,3 +349,13 @@ var personas = [
 for (var i = 0; i < personas.length; i++) {
     console.log(`${personas[i].nombre} mide ${personas[i].altura} m.`)
 }
+
+
+// ===============
+// Clase 18 - Filtrar Arrays
+
+const esAlta = ({ altura }) => altura > 1.8 
+const esBaja = ({ altura }) => altura <= 1.7
+
+var personasAltas = personas.filter(esAlta)
+var personasBajas = personas.filter(esBaja)
