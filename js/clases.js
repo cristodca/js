@@ -322,27 +322,32 @@ var personas = [
     {
         nombre: "Cristo",
         apellido: "D. Chavez",
-        altura: 1.75
+        altura: 1.75,
+        libros: 132
     },
     {
         nombre: "Marcela",
         apellido: "Jacobo",
-        altura: 1.6
+        altura: 1.6,
+        libros: 85
     },
     {
         nombre: "Daner",
         apellido: "SCK",
-        altura: 1.7
+        altura: 1.7,
+        libros: 102
     },
     {
         nombre: "Elon",
         apellido: "Musk",
-        altura: 1.85
+        altura: 1.85,
+        libros: 850
     },
     {
         nombre: "Michael",
         apellido: "Jordan",
-        altura: 2.1
+        altura: 2.1,
+        libros: 50
     }
 ]
 
@@ -371,3 +376,10 @@ const pasarAlturaCms = p => ({
 
 var personasCms = personas.map(pasarAlturaCms)
 
+
+// ===============
+// Clase 20 - Reducir Array
+
+const reducer = (c, { libros }) =>  c + libros
+
+var totalLibros = personas.reduce(reducer, 0)
