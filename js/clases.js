@@ -291,4 +291,25 @@ do {
     contador++
 } while (!llueve());
 
-contador > 1 ? console.log(`Fui a ver si llovía ${contador} veces`) : console.log(`Fui a ver si llovía ${contador} vez`)
+// contador > 1 ? console.log(`Fui a ver si llovía ${contador} veces`) : console.log(`Fui a ver si llovía ${contador} vez`)
+
+
+// ===============
+// Clase 16 - Switch
+
+var signo = "CANCER" //prompt("¿Cuál es tu signo?")
+
+switch (signo.toLowerCase()) {
+    case "acuario":
+        // Acuario
+        break
+    case "piscis":
+        // Piscis
+        break
+    case "cancer":
+        // console.log("Eres Cáncer") // Cancer
+        break
+    default:
+        // No indicaste signo zodiacal
+        break
+}
