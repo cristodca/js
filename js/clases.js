@@ -183,10 +183,42 @@ function printProfessions(person) {
     }
 }
 
-function ifLegalAge(person) {
-    if(person.edad >= 18) {
-        console.log(`${person.nombre} es mayor de edad`)
+function ifLegalAge(p) {
+    if(compareLegalAge(p)) {
+        console.log(`${p.nombre} es mayor de edad`)
     } else {
-        console.log(`${person.nombre} es menor de edad`)
+        console.log(`${p.nombre} es menor de edad`)
+    }
+}
+
+// ===============
+// Clase 11 - Funciones que retornan valores
+
+const LEGAL_AGE = 18
+
+function compareLegalAge(p) {
+    return p.edad >= LEGAL_AGE
+}
+
+
+// ===============
+// Clase 12 - Arrow Functions
+
+// Función anónima
+const compareLegalAge2 = function (p) {
+    return p.edad >= LEGAL_AGE
+}
+
+// Arrow function
+const compareLegalAge3 = p => p.edad >= LEGAL_AGE
+// const compareLegalAge2 = ({ edad }) => edad >= LEGAL_AGE    // válido
+// Se puede prescindir de los () si solo es un parámetro
+// Pasa lo mismo con el return y las llaves {}
+
+function permitirAcceso(p) {
+    if (compareLegalAge3(p)) {
+        console.log("ACESSO PERMITIDO")
+    } else {
+        console.log("ACCESO DENEGADO")
     }
 }
