@@ -1,4 +1,4 @@
-// CLASES 1 - 5
+// CLASES 1 - 20
 
 // Clase 1 - Variables
 
@@ -352,7 +352,7 @@ var personas = [
 ]
 
 for (var i = 0; i < personas.length; i++) {
-    console.log(`${personas[i].nombre} mide ${personas[i].altura} m.`)
+    // console.log(`${personas[i].nombre} mide ${personas[i].altura} m.`)
 }
 
 
