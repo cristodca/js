@@ -23,3 +23,18 @@ cristo.saludar()
 // Clase 22 - Prototipo como Arrow Function
 
 Persona.prototype.soyAlto = () => this.altura > 1.8
+
+
+// ===============
+// Clase 23 - Contexto de las funciones, quien es this
+
+Persona.prototype.soyAlto = () => {
+    // debugger
+    return this.altura > 1.8
+}
+
+Persona.prototype.soyAlto = function() {
+    return this.altura > 1.8
+}
+
+
