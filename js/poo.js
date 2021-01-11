@@ -61,7 +61,7 @@
 
 
 // ===============
-// Clase 25 - Herencia prototipal ECMA script
+// Clase 25 - Herencia clases ECMA script
 
 class Persona {
     constructor (nombre, apellido, altura) {
