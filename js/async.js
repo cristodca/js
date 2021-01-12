@@ -128,37 +128,71 @@ const OPTS = { crossDomain: true }
 // ===============
 // Clase 31 - Manejo de errores con Callbacks
 
-function obtenerPersonaje(id, callback){
-    const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
-    $.get(URL, OPTS, callback).fail(() => {
-        console.log(`Ocurrió un error, no se pudo obtener el personaje: ${id}`)
+// function obtenerPersonaje(id, callback){
+//     const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
+//     $.get(URL, OPTS, callback).fail(() => {
+//         console.log(`Ocurrió un error, no se pudo obtener el personaje: ${id}`)
+//     })
+// }
+
+// obtenerPersonaje(1, function ({ name}) {
+//     console.log(`Hola, soy ${name}`)
+
+//     obtenerPersonaje(2, function({ name}) {
+//         console.log(`Hola, soy ${name}`)
+
+//         obtenerPersonaje(3, function({ name}) {
+//             console.log(`Hola, soy ${name}`)
+
+//             obtenerPersonaje(4, function({ name}) {
+//                 console.log(`Hola, soy ${name}`)
+
+//                 obtenerPersonaje(5, function({ name}) {
+//                     console.log(`Hola, soy ${name}`)
+
+//                     obtenerPersonaje(6, function({ name}) {
+//                         console.log(`Hola, soy ${name}`)
+
+//                         obtenerPersonaje(7, function ({name }) {
+//                             console.log(`Hola, soy ${name}`)
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
+
+// ===============
+// Clase 32 - Promesas
+// Valores que no conocemos
+
+// pending, fulfilled, rejected
+
+// new Promise (function(resolve, reject){
+//     // Code...  
+// }).then(valor = > {
+
+// }).catch(err => {
+
+// })
+
+function obtenerPersonaje(id){
+
+    return new Promise((resolve, reject) => {
+        const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
+        $.get(URL, OPTS, data => {
+            resolve(data)
+        })
+        .fail(() => reject(id))
     })
 }
 
-obtenerPersonaje(1, function ({ name}) {
-    console.log(`Hola, soy ${name}`)
+function onError (id) {
+    console.log.length(`Sucedió un error al obtener el personaje  ${id}`)
+}
 
-    obtenerPersonaje(2, function({ name}) {
-        console.log(`Hola, soy ${name}`)
-
-        obtenerPersonaje(3, function({ name}) {
-            console.log(`Hola, soy ${name}`)
-
-            obtenerPersonaje(4, function({ name}) {
-                console.log(`Hola, soy ${name}`)
-
-                obtenerPersonaje(5, function({ name}) {
-                    console.log(`Hola, soy ${name}`)
-
-                    obtenerPersonaje(6, function({ name}) {
-                        console.log(`Hola, soy ${name}`)
-
-                        obtenerPersonaje(7, function ({name }) {
-                            console.log(`Hola, soy ${name}`)
-                        })
-                    })
-                })
-            })
-        })
-    })
+obtenerPersonaje(1). then(personaje => {
+    console.log(`Hola, soy ${personaje.name}`)
 })
+.catch(onError)
