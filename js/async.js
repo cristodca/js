@@ -75,9 +75,9 @@ const PEOPLE_URL = "people/:id"
 
 const LUKE_URL = `${API_URL}${PEOPLE_URL.replace(":id", 1)}`
 const OPTS = { crossDomain: true }
-const ON_RESPONSE = function (character) {
-    console.log(`Hola, soy ${character.name}`)
-}
+// const ON_RESPONSE = function (character) {
+//     console.log(`Hola, soy ${character.name}`)
+// }
 
 // $.get(LUKE_URL, OPTS, ON_RESPONSE)
 
@@ -85,13 +85,41 @@ const ON_RESPONSE = function (character) {
 // ===============
 // Clase 29 - Múltiples Request
 
-function obtenerPersonaje(id){
+// function obtenerPersonaje(id){
+//     const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
+//     $.get(URL, OPTS, ON_RESPONSE)
+// }
+
+// obtenerPersonaje(4)
+// obtenerPersonaje(1)
+// obtenerPersonaje(2)
+// obtenerPersonaje(3)
+
+
+// ===============
+// Clase 30 - Manejando orden y asincronismo en Js
+
+function obtenerPersonaje(id, callback){
     const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
-    $.get(URL, OPTS, ON_RESPONSE)
+    $.get(URL, OPTS, function (character) {
+        console.log(`Hola, soy ${character.name}`)
+        
+        if (callback) {
+            callback()
+        }
+    })
 }
 
-obtenerPersonaje(4)
-obtenerPersonaje(1)
-obtenerPersonaje(2)
-obtenerPersonaje(3)
-
+obtenerPersonaje(1, function () {
+    obtenerPersonaje(2, function() {
+        obtenerPersonaje(3, function() {
+            obtenerPersonaje(4, function() {
+                obtenerPersonaje(5, function() {
+                    obtenerPersonaje(6, function() {
+                        obtenerPersonaje(7)
+                    })
+                })
+            })
+        })
+    })
+})
