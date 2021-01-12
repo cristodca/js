@@ -67,3 +67,31 @@ function responderSaludo(nombre, dev) {
 // }
 
 
+// ===============
+// Clase 28 - Callbacks
+
+const API_URL = "https://swapi.dev/api/"
+const PEOPLE_URL = "people/:id"
+
+const LUKE_URL = `${API_URL}${PEOPLE_URL.replace(":id", 1)}`
+const OPTS = { crossDomain: true }
+const ON_RESPONSE = function (character) {
+    console.log(`Hola, soy ${character.name}`)
+}
+
+// $.get(LUKE_URL, OPTS, ON_RESPONSE)
+
+
+// ===============
+// Clase 29 - Múltiples Request
+
+function obtenerPersonaje(id){
+    const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
+    $.get(URL, OPTS, ON_RESPONSE)
+}
+
+obtenerPersonaje(4)
+obtenerPersonaje(1)
+obtenerPersonaje(2)
+obtenerPersonaje(3)
+
