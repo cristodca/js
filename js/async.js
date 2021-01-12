@@ -201,8 +201,25 @@ function onError (id) {
 // ===============
 // Clase 33 - Promesas encadenadas
 
-var ids = [1, 2, 3, 4, 5, 6, 7]
-var promesas = ids.map(id => obtenerPersonaje(id))
-Promise.all(promesas)
-            .then(personajes => console.log(personajes))
-            .catch(onError)
+
+
+// ===============
+// Clase 34 - Múltiples promesas en paralelo
+
+
+// ===============
+// Clase 35 - Asyn Await
+
+async function obtenerPersonajes() {
+    var ids = [1, 2, 3, 4, 5, 6, 7]
+    var promesas = ids.map(id => obtenerPersonaje(id))
+    
+    try {
+        var personajes = await Promise.all(promesas)
+        console.log(personajes)
+    } catch (id) {
+        onError(id)
+    }
+}
+
+obtenerPersonajes()
