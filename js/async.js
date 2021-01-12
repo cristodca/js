@@ -260,7 +260,22 @@ function esMayorDeEdad(persona) {
 // esMayorDeEdad(cristo)
 
 for (let i = 0; i < 10; i++) {
-    console.log(i)
+    // console.log(i)
 }
 
-console.log(`Terminó el ciclo for, el valor de i es ${i}`)
+// console.log(`Terminó el ciclo for, el valor de i es ${i}`)
+
+
+// ===============
+// Clase 36 - Fechas en Js
+
+function diasEntreFechas(d1, d2) {
+    const unDia = 1000 * 60 * 60 * 24
+    const diferencia = Math.abs(d1 - d2)
+
+    return Math.floor(diferencia / unDia)
+}
+
+const hoy = new Date()
+const nacimiento = new Date(2000, 5, 25)
+
