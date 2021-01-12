@@ -1,4 +1,4 @@
-// CLASES 26 - 37
+// CLASES 26 - 35
 
 // Clase 26 - Funciones como parámetros
 
@@ -42,9 +42,9 @@ var cristo = new Desarrollador("Cristopher", "D. Chavez")
 var marce = new Persona("Marcela", "Jacobo", 1.6)
 var daner = new Persona("Daner", "SCK", 1.7)
 
-marce.saludar(responderSaludo)
-cristo.saludar(responderSaludo)
-daner.saludar()
+// marce.saludar(responderSaludo)
+// cristo.saludar(responderSaludo)
+// daner.saludar()
 
 function responderSaludo(nombre, dev) {
     console.log(`Buenas, ${nombre}. `)
@@ -52,3 +52,18 @@ function responderSaludo(nombre, dev) {
         console.log(`Ah mira, no sabía que eras programador`)
     }
 }
+
+
+// ===============
+// Clase 27 - Cómo funciona el tiempo en Js
+// console.log("a")
+// setTimeout(() => console.log("b"), 0)
+// console.log("c")
+
+// setTimeout(() => console.log("d"), 2000)
+
+// for (var i = 0; i < 1000000000; i++)  { 
+
+// }
+
+
