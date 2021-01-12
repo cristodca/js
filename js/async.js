@@ -216,7 +216,7 @@ async function obtenerPersonajes() {
     
     try {
         var personajes = await Promise.all(promesas)
-        console.log(personajes)
+        // console.log(personajes)
     } catch (id) {
         onError(id)
     }
@@ -377,3 +377,20 @@ function saludar(saludo = "Hola") {
 // saludar.call(cristopher, "Hola we")    // bind, pero se ejecuta 
 
 // saludar.apply(cristopher, ["Hola parce"])   // Igual que call pero los parámetros se envían en Array
+
+
+// ===============
+// Clase 42 - Cuándo poner punto y coma
+
+console.log("Hola me llamo cristo")
+;[1,2,3].forEach(n => console.log(n * 2))
+
+const nombreM = "Marce"
+console.log("Hola me llamo Marcela")
+;`${nombreM} es una doctora`
+
+function calcularDoble(n) {
+    return { 
+        original: n, doble: n * 2 
+    }
+}
