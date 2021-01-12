@@ -351,3 +351,29 @@ const cumpleaniosInmutable = persona => ({
     ...marcela,
     edad: persona.edad + 1
 })
+
+
+// ===============
+// Clase 41 - Cambiando Contexto dentro de funciones
+
+const cristopher = {
+    nombre: "cristo",
+    apellido: "dca"
+}
+const danersck = {
+    nombre: "daner",
+    apellido: "sck"
+}
+
+function saludar(saludo = "Hola") {
+    console.log(`${saludo}, mi nombre es ${this.nombre}`)
+}
+
+// const saludarACristo = saludar.bind(cristopher)
+// const saludarADanerSck = saludar.bind(danersck)
+
+// setTimeout(saludar.bind(cristopher, "Hola, che"), 1000)
+
+// saludar.call(cristopher, "Hola we")    // bind, pero se ejecuta 
+
+// saludar.apply(cristopher, ["Hola parce"])   // Igual que call pero los parámetros se envían en Array
