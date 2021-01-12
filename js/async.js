@@ -192,7 +192,17 @@ function onError (id) {
     console.log.length(`Sucedió un error al obtener el personaje  ${id}`)
 }
 
-obtenerPersonaje(1). then(personaje => {
-    console.log(`Hola, soy ${personaje.name}`)
-})
-.catch(onError)
+// obtenerPersonaje(1). then(personaje => {
+//     console.log(`Hola, soy ${personaje.name}`)
+// })
+// .catch(onError)
+
+
+// ===============
+// Clase 33 - Promesas encadenadas
+
+var ids = [1, 2, 3, 4, 5, 6, 7]
+var promesas = ids.map(id => obtenerPersonaje(id))
+Promise.all(promesas)
+            .then(personajes => console.log(personajes))
+            .catch(onError)
