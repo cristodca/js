@@ -99,24 +99,63 @@ const OPTS = { crossDomain: true }
 // ===============
 // Clase 30 - Manejando orden y asincronismo en Js
 
+// function obtenerPersonaje(id, callback){
+//     const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
+//     $.get(URL, OPTS, function (character) {
+//         console.log(`Hola, soy ${character.name}`)
+        
+//         if (callback) {
+//             callback()
+//         }
+//     })
+// }
+
+// obtenerPersonaje(1, function () {
+//     obtenerPersonaje(2, function() {
+//         obtenerPersonaje(3, function() {
+//             obtenerPersonaje(4, function() {
+//                 obtenerPersonaje(5, function() {
+//                     obtenerPersonaje(6, function() {
+//                         obtenerPersonaje(7)
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
+
+
+// ===============
+// Clase 31 - Manejo de errores con Callbacks
+
 function obtenerPersonaje(id, callback){
     const URL = `${API_URL}${PEOPLE_URL.replace(":id", id)}`
-    $.get(URL, OPTS, function (character) {
-        console.log(`Hola, soy ${character.name}`)
-        
-        if (callback) {
-            callback()
-        }
+    $.get(URL, OPTS, callback).fail(() => {
+        console.log(`Ocurrió un error, no se pudo obtener el personaje: ${id}`)
     })
 }
 
-obtenerPersonaje(1, function () {
-    obtenerPersonaje(2, function() {
-        obtenerPersonaje(3, function() {
-            obtenerPersonaje(4, function() {
-                obtenerPersonaje(5, function() {
-                    obtenerPersonaje(6, function() {
-                        obtenerPersonaje(7)
+obtenerPersonaje(1, function ({ name}) {
+    console.log(`Hola, soy ${name}`)
+
+    obtenerPersonaje(2, function({ name}) {
+        console.log(`Hola, soy ${name}`)
+
+        obtenerPersonaje(3, function({ name}) {
+            console.log(`Hola, soy ${name}`)
+
+            obtenerPersonaje(4, function({ name}) {
+                console.log(`Hola, soy ${name}`)
+
+                obtenerPersonaje(5, function({ name}) {
+                    console.log(`Hola, soy ${name}`)
+
+                    obtenerPersonaje(6, function({ name}) {
+                        console.log(`Hola, soy ${name}`)
+
+                        obtenerPersonaje(7, function ({name }) {
+                            console.log(`Hola, soy ${name}`)
+                        })
                     })
                 })
             })
