@@ -223,3 +223,44 @@ async function obtenerPersonajes() {
 }
 
 obtenerPersonajes()
+
+
+// ===============
+// Clase 36 - Diferencias var, let, const
+
+var cristo = {
+    nombre: "Cristopher",
+    apellido: "D. Chavez",
+    edad: 20
+}
+
+// var
+function esMayorDeEdad(persona) {
+    var mensaje
+    if (persona.edad >= 18) {
+        mensaje = "Es mayor de edad"
+    } else {
+        mensaje = "Es menor de edad"
+    }
+    console.log(mensaje)
+}
+
+// let -> reduce el alcance al bloque de código donde es utilizado
+function esMayorDeEdad(persona) {
+    let mensaje
+    const MAYORIA_EDAD = 18
+    if (persona.edad >= MAYORIA_EDAD) {
+        mensaje = "Es mayor de edad"
+    } else {
+        mensaje = "Es menor de edad"
+    }
+    console.log(mensaje)
+}
+
+// esMayorDeEdad(cristo)
+
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+
+console.log(`Terminó el ciclo for, el valor de i es ${i}`)
