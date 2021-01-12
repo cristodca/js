@@ -279,3 +279,16 @@ function diasEntreFechas(d1, d2) {
 const hoy = new Date()
 const nacimiento = new Date(2000, 5, 25)
 
+
+// ===============
+// Clase 37 - Recursividad
+
+// 13 / 4
+
+function divisionEntera(dividendo, divisor) {
+    if (dividendo < divisor) {
+        return 0
+    }
+
+    return 1 + divisionEntera(dividendo - divisor, divisor)
+}
