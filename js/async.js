@@ -323,7 +323,7 @@ function factorial(n) {
 
 function crearSaludo(finalDeFrase) {
     return function(nombre) {
-        console.log(`Hola, ${nombre}, ${finalDeFrase}`)
+        // console.log(`Hola, ${nombre}, ${finalDeFrase}`)
     }
 }
 
@@ -334,3 +334,20 @@ const saludoColombiano = crearSaludo("parce")
 saludoArgentino("Cristo")
 saludoMexicano("Cristo")
 saludoColombiano("Cristo")
+
+
+// ===============
+// Clase 40 - Estructuras de datos inmutables
+
+const marcela = {
+    nombre: "Marce",
+    apellido: "Jacobo",
+    edad: 20
+}
+
+// const cumpleanios = persona => persona.edad++
+
+const cumpleaniosInmutable = persona => ({
+    ...marcela,
+    edad: persona.edad + 1
+})
